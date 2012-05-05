@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf8">
+		<title><%= @title + ' | Crate Digging' %></title>
+		<link href="/reset.css" rel="stylesheet">  
+		<link href="/style.css" rel="stylesheet">
+		<script type="text/javascript" language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" language="javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.js"></script>
+		<script type="text/javascript" language="javascript">
+			$(document).ready(function() {
+					$("#newSearch").validate({
+rules: {
+artist_name: {
+required: true
+},
+album_name: {
+required: true
+}
+}
+});
+					})
+		</script>
+	</head>
+	<body>
+		<header>
+		<hgroup>
+		<h1><a href="/">Crate Digging</a></h1>
+		<h2>Finding vinyl on the web</h2>
+		</hgroup>
+		</header>
+
+		<div id="main">
+			<%= yield %>
+		</div>
+	</body>
+</html>

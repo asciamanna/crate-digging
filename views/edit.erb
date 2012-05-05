@@ -1,0 +1,13 @@
+<section id="edit">
+<% unless @search.nil? %>
+<form action="/<%= @search.id %>" method="post">
+	<input type="hidden" name="_method" value="put" />
+	<textarea name="artist_name">  <%= @search.artist_name %></textarea>
+	<textarea name="album_name"> <%= @search.album_name %></textarea>
+	<input type="submit" value="Update Search"/>
+</form>
+<p><a href="/<%= @search.id %>/delete">Delete</a></p>
+<% else %>
+	<p>Cannot find search</p>
+<% end %>
+</section>

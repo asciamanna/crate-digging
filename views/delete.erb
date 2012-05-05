@@ -1,0 +1,10 @@
+<% if @search %>
+	Are you sure you want to delete the search?
+	<form action="/<%= @search.id %>" method="post">
+		<input type="hidden" name="_method" value="delete">
+		<input type="submit" value="Delete it!">
+		<a href="/<%= @search.id %>">Cancel</a>
+	</form>
+<% else %>
+	<p> Search not found.</p>
+<% end %>

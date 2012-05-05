@@ -1,0 +1,17 @@
+<section id="add">
+<form id="newSearch" action="/" method="post">
+	<textarea name="artist_name" id="artist_name" title="Please enter an artist name" placeholder="Artist Name"></textarea>
+	<p>
+	<textarea name="album_name" id="album_name" title="Please enter an album name" placeholder="Album Name"></textarea>
+	<p>
+	<input type="submit" id="submit" value="Save Search"/>
+</form>
+</section>
+
+<% @album_searches.each do | album_search | %>
+	<p>
+	<%= album_search.artist_name%> <%= album_search.album_name %>
+	<a href="/<%=album_search.id%>">[edit]</a>
+	</p>
+	<p class="meta">Created: <%= album_search.created_at%></p>
+<% end %>
