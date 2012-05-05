@@ -1,5 +1,6 @@
 require 'sinatra'
 require './album_search'
+require './search'
 require 'dm-core'
 
 get '/' do
@@ -43,3 +44,11 @@ get '/:id/delete' do
 	@title = "Confirm deletion of note"
 	erb :delete
 end
+
+get '/:id/search' do
+	@search = AlbumSearch.get params[:id]
+	@title = "Searching for vinyl"
+	@results = Search.new(@search).execute
+	erb :searchresults
+end
+

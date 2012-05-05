@@ -11,7 +11,7 @@
 <% @album_searches.each do | album_search | %>
 	<p>
 	<%= album_search.artist_name%> <%= album_search.album_name %>
-	<a href="/<%=album_search.id%>">[edit]</a>
+	<a href="/<%=album_search.id%>">[edit]</a><a href="/<%=album_search.id%>/search">[Search]</a>
 	</p>
 	<p class="meta">Created: <%= album_search.created_at%></p>
 <% end %>
